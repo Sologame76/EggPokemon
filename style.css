@@ -1,0 +1,180 @@
+/* 🎮 STRUCTURE GÉNÉRALE */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  background: url('images/fond_pokemon.png') repeat;
+background-size: cover;
+animation: moveBackground 60s linear infinite;
+  display: flex;
+  color: #222;
+}
+
+/* 📕 MENU LATÉRAL */
+#sidebar {
+  width: 280px;
+  height: 100vh;
+  background: #f44336;
+  padding: 15px;
+  box-shadow: 2px 0 10px rgba(0,0,0,0.2);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.menu-header {
+  font-size: 20px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.menu-tabs {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu-tabs .tab {
+  padding: 10px;
+  background: #e53935;
+  color: white;
+  cursor: pointer;
+  margin-bottom: 5px;
+  text-align: center;
+  border-radius: 5px;
+  transition: background 0.3s;
+}
+
+.menu-tabs .tab:hover {
+  background: #d32f2f;
+}
+
+.menu-tabs .tab.active {
+  background: white;
+  color: #e53935;
+  font-weight: bold;
+}
+
+.tab-content {
+  background: white;
+  border-radius: 8px;
+  padding: 10px;
+  flex-grow: 1;
+  overflow-y: auto;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 🧬 POKÉDEX ENTRÉES */
+#pokedex-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.pokedex-entry {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pokedex-entry.locked {
+  filter: brightness(0) grayscale(100%);
+  opacity: 0.4;
+}
+
+/* 🎮 ZONE DE JEU */
+#main-content {
+  flex-grow: 1;
+  padding: 30px;
+  text-align: center;
+}
+
+#egg-img, #pokemon-img {
+  width: 200px;
+  height: auto;
+  margin: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* 🔔 POP-UP TOAST */
+#toast-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.toast {
+  background: #eee;
+  border-radius: 10px;
+  padding: 10px;
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 0 5px rgba(0,0,0,0.2);
+  animation: fadeInOut 4s forwards;
+}
+
+.toast img {
+  width: 40px;
+  height: 40px;
+}
+
+.shiny-toast {
+  background-color: #ffe680;
+  border: 2px solid gold;
+}
+
+.shiny-glow {
+  filter: drop-shadow(0 0 8px gold);
+}
+
+.shake {
+  animation: shake 0.8s;
+}
+
+@keyframes shake {
+  0% { transform: rotate(0); }
+  25% { transform: rotate(10deg); }
+  50% { transform: rotate(-10deg); }
+  75% { transform: rotate(6deg); }
+  100% { transform: rotate(0); }
+}
+
+@keyframes fadeInOut {
+  0% { opacity: 0; transform: translateY(20px); }
+  10% { opacity: 1; transform: translateY(0); }
+  90% { opacity: 1; }
+  100% { opacity: 0; transform: translateY(20px); }
+}
+
+#search-bar {
+  width: 100%;
+  padding: 10px 15px;
+  border: 2px solid #e53935;
+  border-radius: 25px;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 15px;
+  transition: all 0.3s;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+}
+
+#search-bar:focus {
+  border-color: #ff7961;
+  box-shadow: 0 0 8px rgba(255, 121, 97, 0.5);
+}
+
+@keyframes moveBackground {
+  0% { background-position: 0 0; }
+  100% { background-position: 1000px 0; }
+}

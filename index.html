@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Clicker Pokémon</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- 📕 MENU LATÉRAL -->
+  <div id="sidebar">
+    <div class="menu-header">📲 Menu</div>
+    <ul class="menu-tabs">
+      <li class="tab active" data-tab="pokedex">🧬 Pokédex</li>
+      <li class="tab" data-tab="success">🏆 Succès</li>
+      <li class="tab" data-tab="shop">🛍️ Boutique</li>
+    </ul>
+
+    <div class="tab-content" id="pokedex-tab">
+      <h2>Pokédex</h2>
+      <input type="text" id="search-bar" placeholder="🔍 Rechercher un Pokémon..." />
+      <div id="pokedex-list"></div>
+    </div>
+
+    <div class="tab-content hidden" id="success-tab">
+      <h2>Succès</h2>
+      <p>Tu n’as pas encore débloqué de succès.</p>
+    </div>
+
+    <div class="tab-content hidden" id="shop-tab">
+      <h2>Boutique</h2>
+      <p>Boutique à venir...</p>
+    </div>
+  </div>
+
+  <!-- 🎮 ZONE DE JEU -->
+  <div id="main-content">
+    <h1>🐣 Œuf Pokémon</h1>
+
+    <div id="egg-zone">
+      <p id="egg-type-display">Type d'œuf : ???</p>
+      <img id="egg-img" src="" alt="Œuf Pokémon" />
+      <p id="click-count">Clics restants : 10</p>
+      <button id="click-button">Clique pour faire éclore</button>
+    </div>
+
+    <div id="result-zone" style="display: none;">
+      <h2>🎉 Tu as obtenu :</h2>
+      <p id="pokemon-name"></p>
+      <img id="pokemon-img" src="" alt="" />
+    </div>
+  </div>
+
+  <div id="toast-container"></div>
+
+  <!-- Scripts -->
+  <script src="pokedex.js"></script>
+  <script src="eggs.js"></script>
+  <script src="pokedexView.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
